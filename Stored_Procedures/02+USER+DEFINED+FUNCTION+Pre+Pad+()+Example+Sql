@@ -1,0 +1,25 @@
+DECLARE @Tbl TABLE	(	
+						RowNum			INT IDENTITY(1,1),
+						ProdID			VARCHAR(2000),
+						Product			VARCHAR(2000),
+						Location		VARCHAR(2000)
+					)
+
+INSERT INTO @Tbl (ProdID, Product, Location) SELECT '010', 'Shovels', 'New York'
+INSERT INTO @Tbl (ProdID, Product, Location) SELECT '020', 'Baseball Bats', 'Louisville'
+INSERT INTO @Tbl (ProdID, Product, Location) SELECT '025', 'Concrete', 'New York'
+INSERT INTO @Tbl (ProdID, Product, Location) SELECT '11',  'Clear Plastic', 'London'
+INSERT INTO @Tbl (ProdID, Product, Location) SELECT '045', 'Duct Tape', 'New York'
+INSERT INTO @Tbl (ProdID, Product, Location) SELECT '12',  'Semi-clear Plastic', 'London'
+INSERT INTO @Tbl (ProdID, Product, Location) SELECT '129', 'Grass Seed', 'London'
+
+SELECT		ProdID,	
+			dbo.PrePad(ProdID,3,'0') Sorted,
+			Product, 
+			Location
+			
+FROM		@Tbl
+
+ORDER BY	2
+
+

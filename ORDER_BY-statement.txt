@@ -1,0 +1,15 @@
+ORDER BY- clause
+
+>Ordinals VS Column Names
+>ASC
+>DESC
+>ORDER BY CASE...
+>ORDER BY (SELECT...)
+
+---------------------------------
+ORDER BY with CASE:
+>SELECT * FROM Customers ORDER BY CASE WHEN C_State='NY' THEN
+	1 ELSE 2 END, C_State
+
+-----------------
+

@@ -1,0 +1,9 @@
+GROUP BY clause
+
+Syllabus:
+MAX()
+MIN()
+COUNT(*)
+SUM()
+HAVING clause
+---------------------------

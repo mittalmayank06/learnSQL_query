@@ -1,0 +1,60 @@
+FROM -Statement:
+Syllabus:
+--No join, join, inner join
+--left join, right join
+--inner join VS left/right join
+--Union queries,
+
+--------------------------------------
+INNER JOIN:
+>SELECT EM.EM_lastName +', '+EM.EM_firstName NAME,
+	DP.DP_displayDept,
+	DP.DP_key
+FROM  	Employees EM
+	INNER JOIN
+	Departments DP ON DP.DP_key = EM.DP_key
+--------------------------------------
+LEFT JOIN:  //All fields from left table & matching content from right-table
+>SELECT EM_lastName+' '+EM_lastName NAME,
+	DP_description
+FROM	Employees EM
+	LEFT JOIN
+	Departments DP ON DP.DP_key = EN.DP_key
+-------------------------------------------
+Inner join with TEMP-table :
+>SELECT * INTO #Tmp FROM Employees WHERE 
+	DP_key NOT IN (1,5)   //stores selected data in #Tmp-table,
+>SELECT * FROM #Tmp
+
+-------------------------------------------
+INNER-join with TABLE-variable : 
+>DECLARE @Tb1 TABLE {
+	EM_key  INT,
+	EM_firstName  VARCHAR(2000),
+	EM_lastName VARCHAR(20000),
+	DP_key  INT
+}
+>INSERT INTO @Tb1 (EM_key,EM_firstName,EM_lastName,DP_key )
+ SELECT  EM_key,EM_firstName,EM_lastName,DP_key FROM Employees 
+ 	WHERE DP_key NOT IN (1,5)
+SELECT * FROM @Tb1
+
+------------------------------------
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+WHERE Clause:
+
+Syllabus:
+>  =,>,< operators
+>  IN(), NOT IN()
+>  BETWEEN
+>  IN clause VS sub-query
+>  AND, OR, Parenthesses,
+
+-----------------------------------
+>WHERE X=Y
+>WHERE X>Y  // (<, >, >=)
+>WHERE X IN(a,b,c,d)
+>WHERE X NOT IN(a,b,c,d)
+
+--BETWEEN
+>SELECT * FROM Employees WHERE EM_salary BETWEEN 5000 AND 8000
+
+--AND, OR Operator
+>SELECT * FROM Employees WHERE DATEPART(yy.EM_hireDate) <=2009
+
+--

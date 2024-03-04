@@ -1,0 +1,68 @@
+SELECT statement:
+
+--SELECT *,SELECT DISTINCT, SELECT COUNT(*)
+--SELEC ISNULL()
+--SELECT COUNT(*), MAX(),MIN(),AVG(),SUM()
+--Concatenation
+--CASE Statemnets,
+------------------------------------
+
+>SELECT * FROM Table_name;
+>SELECT COUNT(*) FROM Table_name where col_val = 'XYZ'
+>SELECT DISTINCT col_name, COUNT(col_name) cnt FROM Table_name; //gives first distinct value of particular row,
+>SELCT cols, ISNULL(COL_NAME,9999) FROM table_name  //replaces null val. with 9999
+
+>SELECT dp_desc + '-'+ ISNULL(CAST(dp_order AS VARCHAR(2000) ),'XXXX') from table_name; //CAST: numeric->varchar
+>SELECT SUM(emp_salary) SALARY FROM employees GROUP BY dept
+
+>SELECT dp_desc Dept, COUNT(emp_key) Emps, SUM(emp_sal) SALARIES FORM EMPLOYEE emp INNER JOIN Departments dp ON dp.dp_key=emp.dp_key GROUP BY dp.dp_key,dp_desc ORDER BY 3 DESC
+
+>MAX() & MIN()
+>AVG()
+>SELECT (AVG(emp_sal),0) FROM Employee ORDER BY 1
+
+--CONCATENATION:
+>SELECT col1 + ' '+col2 FROM Employee
+>SELECT CONCAT(col1, col2) FROM Employee
+
+--CASE Statement:
+>SELECT emp_firstName, emp_lastName, emp_salary, 
+  CASE
+	WHEN emp_salary >=100000 THEN '1 lakhs'
+	ELSE 'less than 1 lakh'
+	END  Notes
+FROM Employees
+
+------------------------------------
+>If the fields EM_Title = NULL, EM_FirstName = 'Joe' and EM_LastName = 'Shmoe',
+what will be the result of the following SELECT statement?
+SELECT EM_Title + ' ' + EM_FirstName + ' ' + EM_LastName
+
+RESULT: NULL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
